@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 export const Navbar = () => {
   const [inputSearch, setInputSearch] = useState<string>("");
@@ -15,6 +16,11 @@ export const Navbar = () => {
           </a>
         </div>
         <div className="flex-none gap-10 mr-4">
+          <div className="button__container">
+            <Link to="/newtodo" className="btn">
+              New Todo <span className="text-lg">+</span>
+            </Link>
+          </div>
           <div className="form-control">
             <input
               id="Search"
