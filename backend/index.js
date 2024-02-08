@@ -39,6 +39,16 @@ app.post("/todos", (req, res) => {
   });
 });
 
+app.delete("/todos/:id", (req, res) => {
+  const todoId = req.params.id;
+  const query = "DELETE FROM todo.todos WHERE id = ?";
+
+  db.query(query, [todoId], (err, data) => {
+    if (err) return res.json(err);
+    return res.json("Todo has been deleted succesfully");
+  });
+});
+
 const PORT = process.env.PORT;
 
 app.listen(PORT, () => {

@@ -26,8 +26,6 @@ export const Home = () => {
 
         const data = await res.data;
 
-        console.log(data);
-
         setTodos(data);
         setLoading(false);
       } catch (error) {
